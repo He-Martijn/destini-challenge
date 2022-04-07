@@ -20,6 +20,6 @@ I made my version of this course project open source  so other students can lear
 to do things. 
 Just as I learned a lot from other students work. 
 
-As far as my ownership goes of this project this project is published under the MIT license. 
+As far as my ownership goes of this project it is published under the MIT license. 
 
 Regards, Martijn. 
