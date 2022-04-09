@@ -1,5 +1,3 @@
-//TODO: Step 2 - Create a new class called Story.
-
 class Story{
   String storyTitle;
   String choice1;
