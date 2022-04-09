@@ -27,6 +27,7 @@ class _StoryPageState extends State<StoryPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
+        // NB About the image. Udemy allready added the images to pubspec.yaml
         decoration: BoxDecoration(
           image: DecorationImage(
             image: AssetImage("images/background.png"),
