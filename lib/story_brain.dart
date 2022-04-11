@@ -2,7 +2,7 @@ import 'story.dart';
 
 
 class StoryBrain {
-  int storyNumber = 0;
+  int _storyNumber = 0;
 
 
   StoryBrain() {
@@ -11,7 +11,7 @@ class StoryBrain {
 
   String getStory(){
     print('getStory is called');
-    String firstTitle = _storyData[0].storyTitle;
+    String firstTitle = _storyData[_storyNumber].storyTitle;
     print('firstTitle = $firstTitle');
 
     return firstTitle;
@@ -19,7 +19,7 @@ class StoryBrain {
 
   String getChoice1(){
     print('getChoice1 is called');
-    String firstChoice = _storyData[0].choice1;
+    String firstChoice = _storyData[_storyNumber].choice1;
     print('firstChoice = $firstChoice');
 
     return firstChoice;
@@ -27,7 +27,7 @@ class StoryBrain {
 
   String getChoice2(){
     print('getChoice2 is called');
-    String secondChoice = _storyData[0].choice2;
+    String secondChoice = _storyData[_storyNumber].choice2;
     print('secondChoice = $secondChoice');
 
     return secondChoice;
@@ -37,10 +37,47 @@ class StoryBrain {
     print('nextStory is called.');
     print('the input for nextStory is an int with value : $choiceNumber');
 
+    if (_storyNumber == 0) {
+      if (choiceNumber == 1) {_storyNumber=2;} else if (choiceNumber == 2) {_storyNumber=1;}
+    }
+    else if (_storyNumber == 1) {
+      if (choiceNumber == 1) {_storyNumber=2;} else if (choiceNumber == 2) {_storyNumber=3;}
+    }
+    else if (_storyNumber == 2) {
+      if (choiceNumber == 1) {_storyNumber=5;} else if (choiceNumber == 2) {_storyNumber=4;}
+    }
+    else if (_storyNumber == 3) {
+      restart();
+    }
+    else if (_storyNumber == 4) {
+      restart();
+    }
+    else if (_storyNumber == 5) {
+      restart();
+    }
+    else {restart();};
+
 
 
   }
 
+  void restart(){
+    print('restart is called');
+    _storyNumber = 0;
+
+  }
+
+  bool buttonShouldBeVisible({storyNumberHere}){
+    print('buttonShouldBeVisible is called');
+    print('with input $buttonShouldBeVisible()');
+
+    if (storyNumberHere == 0) {return true;}
+    else if (storyNumberHere == 1){return true;}
+    else if (storyNumberHere == 2){return true;} else {
+      return false; }
+
+  }
+//TODO: Step 26 - Use a Flutter Visibility Widget to wrap this FlatButton.
 
   List<Story> _storyData = [
     // storyTitle
@@ -75,18 +112,13 @@ class StoryBrain {
 
 }
 
-//TODO: Step 23 - Use the storyNumber property inside getStory(), getChoice1() and getChoice2() so that it gets the updated story and choices rather than always just the first (0th) one.
 
 
 
 
 
-//TODO: Step 25 - Change the storyNumber property into a private property so that only story_brain.dart has access to it. You can do this by right clicking on the name (storyNumber) and selecting Refactor -> Rename to make the change across all the places where it's used.
 
 
 
-//TODO: Step 21 - Using the story plan, update nextStory() to change the storyNumber depending on the choice made by the user. e.g. if choiceNumber was equal to 1 and the storyNumber is 0, the storyNumber should become 2.
 
-//TODO: Step 22 - In nextStory() if the storyNumber is equal to 3 or 4 or 5, that means it's the end of the game and it should call a method called restart() that resets the storyNumber to 0.
 
-//TODO: Step 27 - Create a method called buttonShouldBeVisible() which checks to see if storyNumber is 0 or 1 or 2 (when both buttons should show choices) and return true if that is the case, else it should return false.
