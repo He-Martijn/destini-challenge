@@ -79,26 +79,30 @@ class _StoryPageState extends State<StoryPage> {
               ),
               Expanded(
                   flex: 2,
-                  child: TextButton(
-                    child: Container(
-                      color: Colors.blue,
-                      child: Center(
-                        child: Text(storyBrain.getChoice2(),
-                          style: TextStyle(
-                            fontSize: 20.0,
-                            color: Colors.white,
-                          ),),
+                  child: Visibility(
+                    visible: storyBrain.buttonShouldBeVisible(),
+                    child: TextButton(
+                      child: Container(
+                        color: Colors.blue,
+                        child: Center(
+                          child: Text(storyBrain.getChoice2(),
+                            style: TextStyle(
+                              fontSize: 20.0,
+                              color: Colors.white,
+                            ),),
+                        ),
                       ),
+                      onPressed: (){
+                        print('Button \'choice 2\' pressed.');
+                        setState(() {
+                          storyBrain.nextStory(choiceNumber: 2);
+                        });
+
+                      },
+
                     ),
-                    onPressed: (){
-                      print('Button \'choice 2\' pressed.');
-                      setState(() {
-                        storyBrain.nextStory(choiceNumber: 2);
-                      });
-
-                    },
-
-                  )),
+                  ),
+              ),
 
             ],
           ),
@@ -108,8 +112,6 @@ class _StoryPageState extends State<StoryPage> {
   }
 }
 
-
-//TODO: Step 29 - Run the app and test it against the Story Outline to make sure you've completed all the steps. The code for the completed app can be found here: https://github.com/londonappbrewery/destini-challenge-completed/
 
 /*Expanded(
                 flex: 2,

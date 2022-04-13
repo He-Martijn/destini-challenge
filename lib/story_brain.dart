@@ -68,12 +68,26 @@ class StoryBrain {
   }
 
   bool buttonShouldBeVisible({storyNumberHere}){
-    print('buttonShouldBeVisible is called');
-    print('with input $buttonShouldBeVisible()');
+    print(' =====> buttonShouldBeVisible is called');
+    print('with input $storyNumberHere');
+    print('_storyNumber = $_storyNumber');
 
-    if (storyNumberHere == 0) {return true;}
-    else if (storyNumberHere == 1){return true;}
-    else if (storyNumberHere == 2){return true;} else {
+    // At first I used the variable storyNumberHere,
+    // but I forgot to feed the storyNumber to this function.
+    // I know I should use :
+    // visible: storyBrain.buttonShouldBeVisible(storyNumberHere: storyBrain.storyNumber)
+    // But this also works.
+
+    if (_storyNumber == 0) {
+      print('true will be returned');
+      return true;}
+    else if (_storyNumber == 1){
+      print('true will be returned');
+      return true;}
+    else if (_storyNumber == 2){
+      print('true will be returned');
+      return true;} else {
+      print('false will be returned');
       return false; }
 
   }
