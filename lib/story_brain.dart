@@ -91,7 +91,6 @@ class StoryBrain {
       return false; }
 
   }
-//TODO: Step 26 - Use a Flutter Visibility Widget to wrap this FlatButton.
 
   List<Story> _storyData = [
     // storyTitle

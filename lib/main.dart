@@ -113,42 +113,4 @@ class _StoryPageState extends State<StoryPage> {
 }
 
 
-/*Expanded(
-                flex: 2,
-                child: FlatButton(
-                  onPressed: () {
-                    print('Button \'choice 1\' pressed.');
-                    //Choice 1 made by user.
-                  },
-                  color: Colors.red,
-                  child: Text(
-
-                    'Choice 1',
-                    style: TextStyle(
-                      fontSize: 20.0,
-                    ),
-                  ),
-                ),
-              ),*/
-
-/*Expanded(
-                flex: 2,
-
-                //TODO: Step 28 - Set the "visible" property of the Visibility Widget to equal the output from the buttonShouldBeVisible() method in the storyBrain.
-                child: FlatButton(
-                  onPressed: () {
-                    print('Button \'choice 2\' pressed.');
-                    //Choice 2 made by user.
-                  },
-                  color: Colors.blue,
-                  child: Text(
-
-                    'Choice 2',
-                    style: TextStyle(
-                      fontSize: 20.0,
-                    ),
-                  ),
-                ),
-              ),*/
-
 
